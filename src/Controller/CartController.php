@@ -11,9 +11,10 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 class CartController extends AbstractController
 {
     #[Route('/mon-panier', name: 'cart')]
-    public function index(RequestStack $stack): Response
+    public function index(RequestStack $stack, Cart $cart): Response
     {
-        dd($stack->getSession()->get('cart'));
+        // dd($stack->getSession()->get('cart'));
+        dd($cart->get());
 
         return $this->render('cart/cart.html.twig');
     }
@@ -22,8 +23,8 @@ class CartController extends AbstractController
     public function add(Cart $cart, $id): Response
     {
         $cart->add($id);
-        dd($id);
+        // dd($id);
 
-        return $this->render('cart/cart.html.twig');
+        return $this->redirectToRoute('cart');
     }
 }

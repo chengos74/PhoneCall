@@ -31,8 +31,9 @@ class Cart
 
     public function get()
     {
-        $methodget = $this->stack->getSession();
-        return $methodget->get('cart');
+        // $methodget = $this->stack->getSession();
+        // return $methodget->get('cart');
+        return $this->stack->get('cart');
     }
 
     private function getSession(): SessionInterface
