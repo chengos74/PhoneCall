@@ -18,12 +18,16 @@ class Cart
     {
 
         // $card = $this->stack->getSession()->get('cart', []);
-        $this->stack->set('cart', [
-            [
-                'id' => $id,
-                'quantity' => 1
-            ]
-        ]);
+        $cart = $this->stack->get('cart', []);
+
+        if (!empty($cart[$id])) {
+            $cart[$id]++;
+        } else {
+            $cart[$id] = 1;
+        }
+
+
+        $this->stack->set('cart', $cart);
 
         // $this->getSession()->set('cart', [
         //     'id' => $id,
