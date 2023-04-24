@@ -19,8 +19,10 @@ class Cart
 
         // $card = $this->stack->getSession()->get('cart', []);
         $this->stack->set('cart', [
-            'id' => $id,
-            'quantity' => 1
+            [
+                'id' => $id,
+                'quantity' => 1
+            ]
         ]);
 
         // $this->getSession()->set('cart', [
@@ -34,6 +36,11 @@ class Cart
         // $methodget = $this->stack->getSession();
         // return $methodget->get('cart');
         return $this->stack->get('cart');
+    }
+
+    public function remove()
+    {
+        return $this->stack->remove('cart');
     }
 
     private function getSession(): SessionInterface
