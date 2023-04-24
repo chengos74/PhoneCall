@@ -8,7 +8,7 @@ Composer Installer Composer
 Npm Installer Npm
 Yarn Installer Yarn
 Installation
-Après avoir cloné le projet avec git clone https://github.com/DimitriKft/myp_symfony.git
+Après avoir cloné le projet avec git clone https://github.com/chengos74/symfony_project.git
 
 Exécutez la commande cd myp_symfony pour vous rendre dans le dossier depuis le terminal.
 
