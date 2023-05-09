@@ -13,12 +13,14 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 class CartController extends AbstractController
 {
     private $entityManager;
+
     public function __construct(EntityManagerInterface $entityManager)
     {
         $this->entityManager = $entityManager;
     }
+
     #[Route('/mon-panier', name: 'cart')]
-    public function index(RequestStack $stack, Cart $cart): Response
+    public function index(Cart $cart): Response
     {
         // dd($stack->getSession()->get('cart'));
         // dd($cart->get());
@@ -30,9 +32,6 @@ class CartController extends AbstractController
                 'quantity' => $quantity
             ];
         }
-        // dd($cartComplete);
-
-
 
         return $this->render('cart/cart.html.twig', [
             'cart' => $cartComplete
@@ -54,5 +53,21 @@ class CartController extends AbstractController
         $cart->remove();
 
         return $this->redirectToRoute('products');
+    }
+
+    #[Route('/cart/delete/{id}', name: 'delete_to_cart')]
+    public function delete(Cart $cart, $id): Response
+    {
+        $cart->delete($id);
+
+        return $this->redirectToRoute('cart');
+    }
+
+    #[Route('/cart/decrease/{id}', name: 'decrease_to_cart')]
+    public function decrease(Cart $cart, $id): Response
+    {
+        $cart->decrease($id);
+
+        return $this->redirectToRoute('cart');
     }
 }
