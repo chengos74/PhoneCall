@@ -11,14 +11,13 @@
 		<div class="col-md-7 my-auto">
 			<h3>{{product.name}}</h3>
 			<p>{{product.subtitle}}</p>
-			<span class="product-page-price">
+			<h5 class="product-page-price">
 				{{(product.price /100)|number_format(2, ',', '.')}}
-				€</span>
+				€</h5>
 			<hr>
-			<p>{{ product.description}}
+			<p class="text-center">{{ product.description}}
 			</p>
-			<a href=" {{path('add_to_cart', {'id' : product.id})}} " class="btn btn-primary">Ajouter au panier</a>
-		</div>
-	</div>
+			<a href=" {{path('add_to_cart', {'id' : product.id})}} " class="btn btn-primary text-center">Ajouter au panier</a>
+		</div</div>
 
-{% endblock %}
+	{% endblock %}
