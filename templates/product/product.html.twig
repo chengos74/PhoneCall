@@ -24,10 +24,12 @@
 										<p class="card-text">{{ product.subtitle}}</p>
 									</div>
 								</div>
-								<div class="card-footer text-center">
+								<div class="card-footer">
 									<small class="text-muted">{{(product.price /100)|number_format(2, ',', '.')}}
 										€</small>
-									<a href="{{path('add_to_cart', {'id' : product.id})}}" class="btn btn-primary small">Ajouter au panier</a>
+									<a href="{{path('add_to_cart', {'id' : product.id})}}">
+										<i class="fa-sharp fa-solid fa-cart-plus"></i>
+									</a>
 								</div>
 							</div>
 						</div>
