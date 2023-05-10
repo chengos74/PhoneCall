@@ -19,7 +19,7 @@ class Cart
 
         // $card = $this->stack->getSession()->get('cart', []);
         $session = $this->stack->getSession();
-
+        
         $cart = $session->get('cart', []);
 
         if (!empty($cart[$id])) {
@@ -31,7 +31,6 @@ class Cart
 
         $session->set('cart', $cart);
 
-
         // $this->getSession()->set('cart', [
         //     'id' => $id,
         //     'quantity' => 1
@@ -40,6 +39,7 @@ class Cart
 
     public function get()
     {
+        $session = $this->stack->getSession();
         // $methodget = $this->stack->getSession();
         $session = $this->stack->getSession();
         // return $methodget->get('cart');
@@ -73,8 +73,4 @@ class Cart
         }
     }
 
-    private function getSession(): SessionInterface
-    {
-        return $this->stack->getSession();
-    }
 }
