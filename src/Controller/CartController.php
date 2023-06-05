@@ -24,17 +24,9 @@ class CartController extends AbstractController
     {
         // dd($stack->getSession()->get('cart'));
         // dd($cart->get());
-        $cartComplete = [];
-
-        foreach ($cart->get() as $id => $quantity) { //$id = key $quantity = value
-            $cartComplete[] = [
-                'product' => $this->entityManager->getRepository(Product::class)->findOneById($id),
-                'quantity' => $quantity
-            ];
-        }
 
         return $this->render('cart/cart.html.twig', [
-            'cart' => $cartComplete
+            'cart' => $cart->getFull()
         ]);
     }
 
@@ -44,7 +36,7 @@ class CartController extends AbstractController
         $cart->add($id);
         // dd($id);
 
-        return $this->redirectToRoute('cart');
+        return $this->redirectToRoute('products');
     }
 
     #[Route('/cart/remove', name: 'remove_to_cart')]
