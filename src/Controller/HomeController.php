@@ -3,6 +3,7 @@
 namespace App\Controller;
 
 use App\Classe\Cart;
+use App\Entity\Header;
 use App\Entity\Product;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Component\HttpFoundation\Response;
@@ -32,9 +33,16 @@ class HomeController extends AbstractController
             }
         }
 
+        $products = $this->entityManager->getRepository(Product::class)->findByIsBest(1);
+        // dd($products);
+
+        $headers = $this->entityManager->getRepository(Header::class)->findAll();
+        // dd($headers);
 
         return $this->render('home/home.html.twig', [
-            'cart' => $cartComplete
+            'cart' => $cartComplete,
+            'products' => $products,
+            'headers' => $headers
         ]);
         // return $this->render('home/home.html.twig');
     }
