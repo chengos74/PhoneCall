@@ -1,7 +1,5 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Nos produits
-{% endblock %}
 
 {% block content %}
 	<div class="row">
@@ -15,23 +13,23 @@
 					{% for product in products %}
 						<div class="card mb-3" style="max-width: 20rem;">
 							<div class="row g-0">
-								<div class="col-md-4">
-									<a href="{{path('product', {'slug' : product.slug }) }} "><img src="/uploads/{{ product.illustration}}" alt="" class="img-fluid rounded-start"></a>
-								</div>
-								<div class="col-md-8">
-									<div class="card-body">
-										<h5 class="card-title">{{product.name}}</h5>
-										<p class="card-text">{{ product.subtitle}}</p>
-									</div>
-								</div>
-								<div class="card-footer">
-									<small class="text-muted">{{(product.price /100)|number_format(2, ',', '.')}}
-										€</small>
-									<a href="{{path('add_to_cart', {'id' : product.id})}}">
-										<i class="fa-sharp fa-solid fa-cart-plus"></i>
-									</a>
-								</div>
-							</div>
+	<div class="col-md-4">
+		<a href="{{path('product', {'slug' : product.slug }) }} "><img src="/uploads/{{ product.illustration}}" alt="" class="img-fluid rounded-start"></a>
+	</div>
+	<div class="col-md-8">
+		<div class="card-body">
+			<h5 class="card-title">{{product.name}}</h5>
+			<p class="card-text">{{ product.subtitle}}</p>
+		</div>
+	</div>
+	<div class="card-footer">
+		<small class="text-muted">{{(product.price /100)|number_format(2, ',', '.')}}
+			€</small>
+		<a href="{{path('add_to_cart', {'id' : product.id})}}">
+			<i class="fa-sharp fa-solid fa-cart-plus"></i>
+		</a>
+	</div>
+</div>
 						</div>
 					{% endfor %}
 				</div>
