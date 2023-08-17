@@ -19,28 +19,20 @@
 			{% endif %}
 
 			<h1 class="h3 mb-3 font-weight-normal">Merci de vous connectez</h1>
-			<label for="inputEmail">Votre email</label>
-			<input type="email" value="{{ last_username }}" name="email" id="inputEmail" placeholder="Votre email" class="form-control" autocomplete="email" required autofocus>
-			<label for="inputPassword">Votre mot de passe</label>
+			<label for="inputEmail" class="mb-2">Votre email</label>
+			<input type="email" value="{{ last_username }}" name="email" id="inputEmail" placeholder="Votre email" class="form-control mb-3" autocomplete="email" required autofocus>
+			<label for="inputPassword" class="mb-2">Votre mot de passe</label>
 			<input type="password" name="password" id="inputPassword" placeholder="votre mot de passe" class="form-control" autocomplete="current-password" required>
 
 			<input
 			type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}">
 
-			{#
-																Uncomment this section and add a remember_me option below your firewall to activate remember me functionality.
-																See https://symfony.com/doc/current/security/remember_me.html
-														
-																<div class="checkbox mb-3">
-																	<label>
-																		<input type="checkbox" name="_remember_me"> Remember me
-																	</label>
-																</div>
-															#}
 			<br>
-			<button class="btn btn-lg btn-info btn-block mt-3" type="submit">
+			<div class="d-grid gap-2">
+			<button class="btn btn-lg btn-info btn-block mt-1" type="submit">
 				Se connecter
 			</button>
+			</div>
 			<hr>
 			<p class="text-center">Ou souhaitez-vous
 				<a href="{{path('register')}}">Créer un compte

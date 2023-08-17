@@ -22,21 +22,19 @@ class CartController extends AbstractController
     #[Route('/mon-panier', name: 'cart')]
     public function index(Cart $cart): Response
     {
-        // dd($stack->getSession()->get('cart'));
-        // dd($cart->get());
-
         return $this->render('cart/cart.html.twig', [
             'cart' => $cart->getFull()
         ]);
     }
 
     #[Route('/cart/add/{id}', name: 'add_to_cart')]
-    public function add(Cart $cart, $id): Response
+    public function add(Cart $cart, $id, $nom): Response
     {
         $cart->add($id);
-        // dd($id);
+        $this->addFlash('succes', $nom ."a bien été ajouté au panier");
 
         return $this->redirectToRoute('products');
+        // dd($cart);
     }
 
     #[Route('/cart/remove', name: 'remove_to_cart')]
