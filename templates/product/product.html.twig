@@ -3,6 +3,11 @@
 
 {% block content %}
 	<div class="row">
+	{% for message in app.flashes('succes') %}
+		<div class="alert alert-info">
+			{{ message }}
+		</div>
+	{% endfor %}
 		<div class="col-md-3">
 			<h3>Filtrer</h3>
 			{{form(recherche)}}
@@ -23,14 +28,16 @@
 										<p class="card-text">{{ product.subtitle}}</p>
 									</div>
 								</div>
-								<div class="card-footer d-flex justify-content-between">
-									<small class="text-muted">{{(product.price /100)|number_format(2, ',', '.')}}
-										€</small>
-									<a href="{{path('add_to_cart', {'id' : product.id})}}">
-										<i class="fa-sharp fa-solid fa-cart-plus"></i>
-									</a>
-								</div>
 							</div>
+								<div class="row align-items-end">
+									<div class="card-footer d-flex justify-content-between">
+										<small class="text-muted align-item-end">{{(product.price /100)|number_format(2, ',', '.')}}
+											€</small>
+										<a href="{{path('add_to_cart', {'id' : product.id})}}">
+											<i class="fa-sharp fa-solid fa-cart-plus"></i>
+										</a>
+									</div>
+								</div>
 						</div>
 					{% endfor %}
 			</div>

@@ -35,22 +35,23 @@
 					</ul>
 				</div>
 				{% if app.user  %}
-					<a href="{{path('account')}}" class="text-white">Mon compte
+					<a href="{{path('account')}}" class="text-white me-2">Mon compte
 						<small>({{app.user.firstname}})</small>
 					</a>
 					|
-					<a href="{{path('app_logout')}}" class="text-white">Déconnexion</a>
+					<a href="{{path('app_logout')}}" class="text-white ms-2">Déconnexion</a>
 				{% else %}
-					<a href="{{path('app_login')}} " class="text-white">Connexion</a>
+					<a href="{{path('app_login')}} " class="text-white me-2">Connexion</a>
 					|
-					<a href="{{path('register')}} " class="text-white">Inscription</a>
+					<a href="{{path('register')}} " class="text-white ms-2">Inscription</a>
 				{% endif %}
-			</div>
 			<a
-				href="{{path('cart')}} " class="btn btn-success">{# <i
-									class="fa-solid fa-cart-shopping"><span class="badge text-bg-secondary">{{ cart|length }}</span>
-								</i> #}
+				href="{{path('cart')}}" class="btn btn-success btn-sm ms-3">
+				<i class="fa-solid fa-cart-shopping">
+				{# {{ cart|length }} #}
+</i>
 			</a>
+			</div>
 		</nav>
 
 		<main>

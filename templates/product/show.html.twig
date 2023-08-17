@@ -15,7 +15,7 @@
 				{{(product.price /100)|number_format(2, ',', '.')}}
 				€</h5>
 			<hr>
-			<p class="text-center">{{ product.description}}
+			<p>{{ product.description}}
 			</p>
 			<a href=" {{path('add_to_cart', {'id' : product.id})}} " class="btn btn-primary text-center">Ajouter au panier</a>
 		</div>
