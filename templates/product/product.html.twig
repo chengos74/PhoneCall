@@ -1,5 +1,8 @@
 {% extends 'base.html.twig' %}
 
+{% block title %} Nos produits
+	
+{% endblock %}
 
 {% block content %}
 	<div class="row">
@@ -16,7 +19,31 @@
 				<h1>Nos produits</h1>
 				<div class="row">
 					{% for product in products %}
-						<div class="card mt-3" style="max-width: 20rem;">
+					<div class="col-lg-3 col-md-4 col">
+						<div class="card mb-3">
+						<a href="{{path('product', {'slug' : product.slug }) }} ">
+							<img class="img-fluid img-product" src="/uploads/{{ product.illustration}}" alt="Card image cap"></a>
+								<div class="card-body">
+									<h5 class="card-title text-center">{{product.name}}</h5>
+									{# <p class="card-text">{{ product.description}}</p> #}
+								</div>
+								<div class="card-footer d-flex justify-content-between">
+									<small class="text-muted align-item-end">{{(product.price /100)|number_format(2, ',', '.')}}
+										€</small>
+									<a href="{{path('add_to_cart', {'id' : product.id})}}">
+										<i class="fa-sharp fa-solid fa-cart-plus"></i>
+									</a>
+								</div>
+						</div>
+					</div>
+					{% endfor %}					
+				</div>
+			</div>
+		</div>
+	</div>
+{% endblock %}
+
+						{# <div class="card mt-3" style="max-width: 20rem;">
 							<div class="row g-0">
 								<div class="col-md-5">
 									<a href="{{path('product', {'slug' : product.slug }) }} ">
@@ -38,10 +65,4 @@
 										</a>
 									</div>
 								</div>
-						</div>
-					{% endfor %}
-			</div>
-			</div>
-		</div>
-	</div>
-{% endblock %}
+						</div> #}
