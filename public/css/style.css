@@ -1,10 +1,37 @@
+
 *{
     padding: 0;
     margin: 0;
     box-sizing: border-box;
 }
 
+/* mon compte */
+.account-item{
+    background-color: #f1f2f6;
+    padding: 5rem;
+    text-decoration: none;
+}
 
+.account-item a {
+text-decoration: none;
+font-size: 1.2rem;
+color: #3498db;
+font-weight: 500;
+}
+
+.account-item a:hover {
+color: #778ca3;
+}
+
+.admin {
+    text-decoration: none;
+    color: #3498db;
+}
+
+.admin:hover {
+    color: #778ca3;
+}
+/* page produit */
 .card {
     width: 12rem;
 }

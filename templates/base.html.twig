@@ -28,8 +28,15 @@
 							<a class="nav-link active" href="{{path('products')}} ">Nos produits
 							</a>
 						</li>
+						<li class="nav-item">
+							<a class="nav-link active" href="{{path('contact')}} ">Contactez-nous
+							</a>
+						</li>
 					</ul>
 				</div>
+				<form action="">
+					
+				</form>
 				{% if app.user  %}
 					<a href="{{path('account')}}" class="text-white me-2">Mon compte
 						<small>({{app.user.firstname}})</small>
