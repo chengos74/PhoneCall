@@ -1,0 +1,65 @@
+{% extends 'base.html.twig' %}
+
+{% block carousel %}{% endblock %}
+
+{% block content %}
+
+<h3 class="mt-3">Nos meilleurs ventes</h3>
+<p>Découvrez les articles les plus vendus</p>
+	<div class="row">
+		{% for product in products %}
+		<div class="col-md-4">
+		{% include 'product/single_product.html.twig'%}
+		</div>
+		{% endfor %}
+	</div>
+
+	<hr class="featurette-divider">
+
+	<div class="row featurette">
+		<div class="col-md-7">
+			<h2 class="featurette-heading fw-normal lh-1">Lorem ipsum dolor sit amet.
+				<span class="text-muted">Lorem, ipsum dolor.</span>
+			</h2>
+			<p class="lead">Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus maxime illum eos provident, ab eius repudiandae necessitatibus ipsum quae asperiores quis, praesentium minus illo quo quos repellat atque dicta dolore nam perferendis consequuntur fugit nemo eveniet eum! Voluptatem, laborum asperiores cumque consectetur ea accusantium corrupti placeat ipsa odit enim quidem? Consequatur necessitatibus dolorem dicta sint! Ad, saepe! Sequi excepturi minima quis suscipit perspiciatis, architecto aut ex fuga sapiente nobis, ea aliquam. Sint rerum quam iusto. Perspiciatis inventore iure illo similique, corporis ipsam laudantium libero repellendus! Eos odit provident id temporibus dolor at blanditiis, quidem et. Consequuntur, enim quaerat. Itaque reprehenderit molestias labore doloribus ullam iste, deserunt consectetur cum ducimus nostrum alias ex suscipit, ratione voluptatem veniam sunt iusto eveniet dicta eum enim. Soluta neque molestias saepe id perspiciatis provident, asperiores corporis blanditiis voluptatibus officia, ab ad laboriosam officiis amet accusamus eos autem temporibus minima necessitatibus quasi, et error. Laboriosam quibusdam tempore ut architecto aliquam, repellendus voluptatibus laudantium rerum culpa, numquam quia ipsum. Quis vel ipsa mollitia ipsam inventore sequi quam corrupti, eveniet, quos possimus consectetur aspernatur aliquid totam voluptatem eius sunt praesentium nostrum a labore cumque! Odit officia a excepturi corporis at. Dignissimos tempora ab culpa nostrum et. Eum, facere consequatur officiis est rerum aut fugiat id. Tenetur commodi fuga reprehenderit ea itaque quisquam, asperiores corrupti in deserunt, recusandae consequuntur.</p>
+		</div>
+		<div class="col-md-5">
+			<img src="{{asset('/images/pexels-hammad-khalid-1786433.jpg')}}" class="img-fluid" alt="">
+		</div>
+	</div>
+
+	<hr class="featurette-divider">
+
+	<div class="row featurette">
+		<div class="col-md-7 order-md-2">
+			<h2 class="featurette-heading fw-normal lh-1">Lorem ipsum dolor sit amet.
+				<span class="text-muted">Lorem, ipsum dolor</span>
+			</h2>
+			<p class="lead">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nihil provident quo recusandae soluta dicta accusamus atque perferendis nemo eaque. Expedita iusto, velit eligendi provident perspiciatis officia dignissimos fugit, at nemo inventore doloribus quos dolore labore adipisci doloremque incidunt molestias veniam deserunt aut dicta odio. Fuga esse voluptatem, ad enim aspernatur perspiciatis blanditiis inventore fugit laudantium aliquid veritatis incidunt minus repudiandae dignissimos modi quisquam? Dicta, temporibus nam! Ducimus, officiis tempora voluptate sequi natus quos eius excepturi, nesciunt omnis, consequuntur neque hic fugit saepe perferendis laborum harum deleniti. Molestias incidunt officiis doloribus ex facilis. Quasi illum, magni suscipit placeat deleniti, velit alias dolorem sint praesentium dolore quam quaerat ipsum voluptatibus dicta veniam amet laudantium consectetur temporibus, possimus impedit et. Inventore saepe molestiae, non autem blanditiis animi odit excepturi, recusandae vel eaque harum voluptatibus magni eum consequuntur quibusdam iure nesciunt ipsum perspiciatis aut ut dignissimos in! Suscipit amet perferendis dolorum labore nulla numquam dolore cum temporibus dolores eveniet obcaecati fugit commodi earum tempore odio, voluptatibus ratione. Et enim reiciendis veniam quidem amet saepe est error repellendus fuga obcaecati inventore, ipsam facilis veritatis voluptatibus voluptates repellat perferendis at velit explicabo? Maxime cupiditate eum cum esse repudiandae distinctio placeat molestias tempora reprehenderit modi cumque autem dolorem, recusandae odio voluptatem omnis! Iusto maiores, odit, earum itaque esse reprehenderit, maxime mollitia assumenda corporis adipisci ullam quasi quibusdam.</p>
+		</div>
+		<div class="col-md-5 order-md-1">
+			<img src="{{asset('/images/pexels-matheus-bertelli-799443.jpg')}}" class="img-fluid"  alt="">
+		</div>
+	</div>
+
+	<hr class="featurette-divider">
+
+	<div class="row featurette">
+		<div class="col-md-7">
+			<h2 class="featurette-heading fw-normal lh-1">Lorem ipsum dolor sit amet.
+				<span class="text-muted">Lorem, ipsum dolor</span>
+			</h2>
+			<p class="lead">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Cum fuga facere magni quibusdam unde. Exercitationem officia, iure impedit repellat quibusdam ipsa consectetur et repellendus dolore! Tenetur obcaecati culpa ducimus? Nulla soluta blanditiis, fugit vel quod commodi! Sequi consectetur maxime, nesciunt cupiditate, eos quo nobis inventore in incidunt neque sit atque vel sunt soluta recusandae libero voluptatum corrupti eaque itaque aperiam? Molestiae voluptate similique amet, ex cupiditate fugiat accusamus inventore eius, nisi asperiores sit eaque neque, commodi aliquid quas repudiandae animi illo. Veniam illo, ducimus deleniti ut veritatis, dolor voluptas reprehenderit harum quod quasi nobis illum fugiat iste laudantium officiis praesentium exercitationem natus velit! Ipsum, iusto blanditiis aut quos provident ducimus aperiam sapiente delectus porro velit enim neque deserunt dolor doloribus!</p>
+		</div>
+		<div class="col-md-5">
+			<img src="{{asset('/images/pexels-kaique-rocha-105254.jpg')}}" class="img-fluid"  alt="">
+		</div>
+	</div>
+
+	<hr
+	class="featurette-divider">
+
+<!-- /END THE FEATURETTES -->
+
+
+{% endblock %}

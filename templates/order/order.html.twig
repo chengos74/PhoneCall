@@ -1,0 +1,40 @@
+{% extends 'base.html.twig' %}
+{% block title %}Valider ma commande - PhoneCall
+{% endblock %}
+{% block content %}
+	<h2>Je passe ma commande</h2>
+	<p>Choississez vos préférences avant de passer votre commande sur PhoneCall.</p>
+	<hr>
+	<div class="row">
+		<div class="col-md-6">
+			{% set formHtml %}
+			{{form_start(order, {action:path('order_recap')})}}
+			{# {{ form_label(form.carrier, 'mljiffes') }} #}
+			<a href="{{path('account_address_add')}} ">Ajouter une nouvelle adresse</a>
+			{{form_end(order)}}
+			{% endset %}
+			{{formHtml|replace({'[br]' : '<br/>'})|raw}}
+		</div>
+		<div class="col-md-6">
+			<div class="text-center">
+				<b>Récap de ma commande</b><br>
+				<p>Retrouvez le récapitulatif de votre commande</p>
+			</div>
+			<div class="order-summary ">
+				{% for key, produit in cart %}
+					<div class="row {% if key > 0 %} mt-2 {% endif %} ">
+						<div class="col-3"><img src="/uploads/{{produit.product.illustration}} " alt="{{produit.product.name}}"></div>
+						<div class="col-7 my-auto">{{produit.product.name}}
+							<br>
+							{# <small>{{produit.product.subtitle}}</small> #}
+						</div>
+						<div class="col-2 my-auto">x
+							{{produit.quantity}}
+						</div>
+					</div>
+				{% endfor %}
+
+			</div>
+		</div>
+	</div>
+{% endblock %}
