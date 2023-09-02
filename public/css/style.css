@@ -4,7 +4,105 @@
     box-sizing: border-box;
 }
 
+.navbar-nav {
+    display: flex;
+    align-content: space-between;
+}
 
+
+.card {
+    width: 12rem;
+}
+.img-content {
+    width: 100%;
+    height: 15rem;
+    object-fit: contain;
+    align-items: center;
+}
+
+.img-product{
+    height: 12rem;
+    object-fit: contain;
+    padding: 1rem;
+
+}
+
+.center {
+    display: flex;
+    align-items: center;
+    justify-items: center;
+}
+
+@media (max-width: 430px) {
+    .card-deck {
+        display: flex;
+        justify-content: center;
+        margin-bottom: 1rem;
+    }
+    .center {
+        display: flex;
+        justify-content: center;
+    }
+    .meilleurVente {
+        text-align: center;
+    }
+}
+
+.block-small {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.form-check {
+    background-color: #f4f8ff;
+    padding: 20px 65px;
+    margin-top: 7px;
+}
+
+.col-form-label {
+    font-weight: bold;
+}
+
+.order-summary {
+    background-color: #f4f8ff;
+    padding: 20px;
+    margin-top: 22px;
+}
+
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+/* mon compte */
+.account-item{
+    background-color: #f1f2f6;
+    padding: 5rem;
+    text-decoration: none;
+}
+
+.account-item a {
+text-decoration: none;
+font-size: 1.2rem;
+color: #3498db;
+font-weight: 500;
+}
+
+.account-item a:hover {
+color: #778ca3;
+}
+
+.admin {
+    text-decoration: none;
+    color: #3498db;
+}
+
+.admin:hover {
+    color: #778ca3;
+}
+/* page produit */
 .card {
     width: 12rem;
 }
