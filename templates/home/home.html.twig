@@ -4,11 +4,13 @@
 
 {% block content %}
 
-<h3 class="mt-3">Nos meilleurs ventes</h3>
-<p>Découvrez les articles les plus vendus</p>
+<div class="meilleurVente">
+	<h3 class="mt-3 ">Nos meilleurs ventes</h3>
+	<p>Découvrez les articles les plus vendus</p>
+</div>
 	<div class="row">
 		{% for product in products %}
-		<div class="col-md-4">
+		<div class="col-md-4 col homevente">
 		{% include 'product/single_product.html.twig'%}
 		</div>
 		{% endfor %}
