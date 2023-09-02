@@ -26,8 +26,6 @@ class StripeController extends AbstractController
         $order = $entityManager->getRepository(Order::class)->findOneByReference($reference);
 
 
-        // dd($order->getOrderDetails()->getValues());
-
         if (!$order) {
             new JsonResponse(['error' => 'order']); //s'il ne trouve pas la commande on affiche une erreur 
         }
@@ -60,7 +58,6 @@ class StripeController extends AbstractController
             'quantity' => 1,
         ];
 
-        // dd($products_for_stripe);
 
         Stripe::setApiKey('sk_test_51LBPY7IX5XUDYS0pkRpL9ZptPWMooSSJoYiyQJ5zUIzeByJZgIXq2ma78HvVEYPby7zDSJjc5uJXuHRE9mNjwt2s00zNiovzbX');
 
@@ -75,16 +72,11 @@ class StripeController extends AbstractController
             'success_url' => $YOUR_DOMAIN . '/commande/merci/{CHECKOUT_SESSION_ID}',
             'cancel_url' => $YOUR_DOMAIN . '/commande/erreur/{CHECKOUT_SESSION_ID}',
         ]);
-        // dd($checkout_session);
+
         $order->setStripeSessionId($checkout_session->id);
         $entityManager->flush();
 
 
         return $this->redirect($checkout_session->url, 303);
-
-
-
-        // dump("checkout_session id : " . $checkout_session->id);
-        // dd("checkout_session :" . $checkout_session);
     }
 }

@@ -9,7 +9,6 @@
 		<div class="col-md-6">
 			{% set formHtml %}
 			{{form_start(order, {action:path('order_recap')})}}
-			{# {{ form_label(form.carrier, 'mljiffes') }} #}
 			<a href="{{path('account_address_add')}} ">Ajouter une nouvelle adresse</a>
 			{{form_end(order)}}
 			{% endset %}
@@ -23,13 +22,19 @@
 			<div class="order-summary ">
 				{% for key, produit in cart %}
 					<div class="row {% if key > 0 %} mt-2 {% endif %} ">
-						<div class="col-3"><img src="/uploads/{{produit.product.illustration}} " alt="{{produit.product.name}}"></div>
-						<div class="col-7 my-auto">{{produit.product.name}}
+						<div class="col-3">
+							<div class="card" style="width: 4rem;">
+								<img src="/uploads/{{produit.product.illustration}} " alt="{{produit.product.name}}">
+							</div>
+						</div>
+						<div class="col-3 my-auto">{{produit.product.name}}
 							<br>
-							{# <small>{{produit.product.subtitle}}</small> #}
 						</div>
 						<div class="col-2 my-auto">x
 							{{produit.quantity}}
+						</div>
+						<div class="col-3 my-auto">
+							{{(produit.product.price /100)|number_format(2, ',', '.')}} €
 						</div>
 					</div>
 				{% endfor %}

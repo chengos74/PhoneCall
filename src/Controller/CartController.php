@@ -28,10 +28,10 @@ class CartController extends AbstractController
     }
 
     #[Route('/cart/add/{id}', name: 'add_to_cart')]
-    public function add(Cart $cart, $id, $nom): Response
+    public function add(Cart $cart, $id): Response
     {
         $cart->add($id);
-        $this->addFlash('succes', $nom ."a bien été ajouté au panier");
+        
 
         return $this->redirectToRoute('products');
         // dd($cart);

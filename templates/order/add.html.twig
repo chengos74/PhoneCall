@@ -34,7 +34,11 @@
 				{% set total = null %}
 				{% for key, produit in cart %}
 					<div class="row {% if key > 0 %} mt-2 {% endif %} ">
-						<div class="col-3"><img src="/uploads/{{produit.product.illustration}} " alt="{{produit.product.name}}"></div>
+						<div class="col-3">
+							<div class="card" style="width: 2rem;">
+								<img src="/uploads/{{produit.product.illustration}} " alt="{{produit.product.name}}">
+							</div>
+						</div>
 						<div class="col-7 my-auto">{{produit.product.name}}
 							<br>
 							<small>x
