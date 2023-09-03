@@ -22,6 +22,8 @@ class CartController extends AbstractController
     #[Route('/mon-panier', name: 'cart')]
     public function index(Cart $cart): Response
     {
+
+        // dd($cart->getFull());
         return $this->render('cart/cart.html.twig', [
             'cart' => $cart->getFull()
         ]);
@@ -33,7 +35,7 @@ class CartController extends AbstractController
         $cart->add($id);
         
 
-        return $this->redirectToRoute('products');
+        return $this->redirectToRoute('cart');
     }
 
     #[Route('/cart/remove', name: 'remove_to_cart')]
