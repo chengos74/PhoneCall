@@ -2,6 +2,7 @@
 
 namespace App\Controller;
 
+use App\Classe\Cart;
 use App\Entity\Contact;
 use App\Form\ContactType;
 use Doctrine\ORM\EntityManagerInterface;
@@ -22,8 +23,11 @@ class ContactController extends AbstractController
     }
 
     #[Route('/contact', name: 'contact')]
-    public function index(Request $request, MailerInterface $mailer): Response
+    public function index(Request $request, MailerInterface $mailer, Cart $cart): Response
     {
+
+
+        $cartComplete = $cart->getFull();
 
         $contact = new Contact();
 
@@ -68,7 +72,8 @@ class ContactController extends AbstractController
         }
 
         return $this->renderForm('contact/contact.html.twig', [
-            'contact' => $form
+            'contact' => $form,
+            'cart' => $cartComplete
         ]);
     }
 }

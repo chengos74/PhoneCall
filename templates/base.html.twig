@@ -51,7 +51,7 @@
 							<a href="{{path('register')}} " class="text-white ms-2">Inscription</a>
 						{% endif %}
 						<a href="{{path('cart')}}" class="btn btn-success btn-sm ms-3">
-							<i class="fa-solid fa-cart-shopping"></i>
+							<i class="fa-solid fa-cart-shopping"><span class="mx-2">{{cart|length}}</span></i>
 						</a>
 					</form>
 				</div>
